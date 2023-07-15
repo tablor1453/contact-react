@@ -81,8 +81,13 @@ function App() {
     setIsUpdate({ id: id, status: true });
   }
 
-  function handleDelete() {
-    console.log('Do delete data');
+  function handleDelete(id) {
+    if (confirm("Press a button!") == true) {
+      let datas = [...contacts];
+      let filteredData = datas.filter((contact => contact.id !== id));
+
+      setContacts(filteredData);
+    }
   }
 
   return (

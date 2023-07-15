@@ -20,7 +20,7 @@ function Card({ className, children = null, datas = null, handleEdit, handleDele
               <div className="flex ms-auto" key={contact.id}>
                 <div className="grid grid-cols-2 gap-1">
                   <Button className={'p-1 bg-green-400 hover:bg-green-300 rounded-md'} onClick={() => handleEdit(contact.id)}>Edit</Button>
-                  <Button className={'px-2 bg-red-400 hover:bg-red-300 rounded-md'} onClick={handleDelete}>Delete</Button>
+                  <Button className={'px-2 bg-red-400 hover:bg-red-300 rounded-md'} onClick={() => handleDelete(contact.id)}>Delete</Button>
                 </div>
               </div>
             </div>
