@@ -33,7 +33,10 @@ function App() {
   }
 
   function resetInput() {
-    console.log('reset input');
+    setFormData({
+      name: "",
+      phone: ""
+    })
   }
 
   function saveContact(e) {
@@ -63,10 +66,7 @@ function App() {
 
     setIsUpdate({ id: null, status: false });
     setContacts(datas);
-    setFormData({
-      name: "",
-      phone: "",
-    })
+    resetInput();
   }
 
   function handleEdit(id) {
@@ -82,7 +82,7 @@ function App() {
   }
 
   function handleDelete(id) {
-    if (confirm("Press a button!") == true) {
+    if (confirm("Hapus kontak ini?") == true) {
       let datas = [...contacts];
       let filteredData = datas.filter((contact => contact.id !== id));
 
@@ -116,9 +116,6 @@ function App() {
       </Container >
       <Container className={'flex justify-center'}>
         <Card className={'w-full lg:w-1/2 font-semibold'} datas={contacts} handleEdit={handleEdit} handleDelete={handleDelete} />
-      </Container>
-      <Container className={'flex justify-center'}>
-        <Card className={'lg:w-1/2 font-semibold'} />
       </Container>
     </>
   )
